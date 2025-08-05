@@ -1,19 +1,27 @@
-const express  = require ("express");
-
+import express from "express";
+import dotenv from "dotenv";
 const app = express(); 
+import authRoutes from "./Routes/auth.routes.js";
+import connectMongoDB from "./db/connectMongoDB.js";
 
+dotenv.config();
+const PORT = process.env.PORT || 5000;
 //rutas
 app.get("/", (req,res) =>{
   //ruta raiz
-  res.send("route working!!!");
+  res.send("route working!!");
     
 });
 
-app.get("/pagina1", (req,res) =>{
-  res.send("pagina! unooo");
-})
+app.use("/api/auth", authRoutes);  
 
-app.listen(5000, () => console.log("server runing on port 5000"));
+
+
+
+app.listen(PORT, () => {
+  connectMongoDB();
+  console.log(`server is running on port ${PORT}`);
+});
 
 
 
