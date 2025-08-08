@@ -1,4 +1,4 @@
-Modulos a instalar para otros dispositivos, (que correr si abro el proyecto en otro dispositivo que no sea el)
+Modulos a instalar para otros dispositivos, (que correr si abro el proyecto en otro dispositivo)
 
 npm install
 npm install express dotenv cookie.parser bcryptjs mongoose socket.io jsonwebtoken
