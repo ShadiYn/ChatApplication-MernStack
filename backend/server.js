@@ -5,6 +5,7 @@ import authRoutes from "./Routes/auth.routes.js";
 import messagesRoutes from "./Routes/messages.routes.js";
 import connectMongoDB from "./db/connectMongoDB.js";
 import cookieParser from "cookie-parser";
+import userRoutes from "./Routes/user.routes.js";
 
 
 const PORT = process.env.PORT || 5000;
@@ -16,6 +17,7 @@ app.use(cookieParser()); // Middleware to parse cookies
 
 app.use("/api/auth", authRoutes);  
 app.use("/api/messages", messagesRoutes );  
+app.use("/api/users", userRoutes );  
 
 
 

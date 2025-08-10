@@ -46,4 +46,24 @@ await Promise.all([conversation.save(), newMessage.save()]); //guardamos ambos e
   }
 
 
-} 
+} ;
+
+export const getMessages = async (req,res) => {
+  try{
+    const {id:userToChatWith}=req.params;  //id del usuario con el que se quiere chatear
+  
+    const senderId = req.user._id; //id del usuario que envía el mensaje, viene del middlew
+    const conversation = await Conversation.findOne({
+      participants : {$all: [senderId, userToChatWith]}
+    }).populate("messages") //buscamos la conversación entre el usuario que envía y el que recibe el mensaje, no es una referencia sino el mensaje actual
+    const messages = conversation.messages
+    if(!conversation) return res.status(200).json([]); //si no existe la conversación, devolvemos un array vacío
+    res.status(200).json(messages);
+  
+  
+  
+  }catch(error){
+    console.log("error in getMessages controller:", error);
+    res.status(500).json({error: "internal server error"});
+  }
+}
