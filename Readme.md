@@ -23,3 +23,12 @@ npm install express dotenv cookie.parser bcryptjs mongoose socket.io jsonwebtoke
 # 09/08/2025
   Aprendida la menera de crear mensajes, y enviar mensajes mediante el id a la persona correspondiente, he creado rutas para los mensajes, los modelos de la base de datos de los mensajes, y como gestionarlos.
     he probado en postman que se envien correctamente los mensajes.
+
+ # 11/08/2025
+  Empezando con la UI, y el diseño de la pagina web.
+    visitar este sitio para el efecto cristal: https://tailwindcss-glassmorphism.vercel.app/
+
+ # 13/08/2025
+    siguiendo con la UI, creadas login, singup, y empezando ya a hacer el homepage
+
+    Hay que instalar esto para los iconos de react:  npm install react-icons --save
