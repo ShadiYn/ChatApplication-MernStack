@@ -1,7 +1,15 @@
 Modulos a instalar para otros dispositivos, (que correr si abro el proyecto en otro dispositivo)
 
+aplicacion general
 npm install
 npm install express dotenv cookie.parser bcryptjs mongoose socket.io jsonwebtoken
+npm add react-hot-toast
+npm i react-router-dom
+
+
+frontend:
+npm install react-icons --save
+ npm i react-router-dom
 
 # 05/08/2025
   inciados para el front y back para la aplicacion de chat.
@@ -32,3 +40,14 @@ npm install express dotenv cookie.parser bcryptjs mongoose socket.io jsonwebtoke
     siguiendo con la UI, creadas login, singup, y empezando ya a hacer el homepage
 
     Hay que instalar esto para los iconos de react:  npm install react-icons --save
+
+  # 15/08/2025
+    diseño realizado, ahora solo falta impleentar las funciones los botones y el backend.
+      correr este comando:
+      
+
+  # 16/08/2025
+  diseño terminado, y refinado he cambiado algunos fondos y colores y letras, pero flata cambiar los de login y registro.
+
+  empezando con la implementacion del registro,
+  para los toast que se van bien tenemos que descargar una libreria esta junto a los demás arriba.

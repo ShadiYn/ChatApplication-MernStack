@@ -49,10 +49,12 @@ export const logoutUser =  (req, res) => {
 export const signUpUser = async(req, res) => {
    // Logic for user sign up  
     try{
-      const {firstName, lastName, userName, Password, ConfirmPassword, gender} = req.body;
-      if(Password !== ConfirmPassword){
-        return res.status(400).json({message: "Passwords do not match"});
-      }
+let { firstName, lastName, userName, password, confirmPassword, gender } = req.body;
+gender = gender.charAt(0).toUpperCase() + gender.slice(1).toLowerCase();
+
+if (password !== confirmPassword) {
+  return res.status(400).json({ message: "Passwords do not match" });
+}
       const userExist = await User.findOne({userName});
       if(userExist){
         return res.status(400).json({message:"this username already exists"});
@@ -63,15 +65,18 @@ export const signUpUser = async(req, res) => {
 
       const girlPic = `https://avatar.iran.liara.run/public/girl?username=${userName}`;
 
-    const fullName = `${firstName} ${lastName}`;
-    const otherPic = `https://avatar.iran.liara.run/username?username=${encodeURIComponent(fullName)}`;
+        const fullName = `${firstName} ${lastName}`;
+
+        const otherPic = `https://avatar.iran.liara.run/username?username=${encodeURIComponent(fullName)}`;
 
 
 
 
       //take the password and hash it here
       const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(Password, salt);
+      const hashedPassword = await bcrypt.hash(password, salt);
+    
+
 
       //crear nuevo usuario y guardalo en la base de datos
       const  newUser = new  User({
@@ -80,7 +85,7 @@ export const signUpUser = async(req, res) => {
         userName,
         password: hashedPassword,
         gender,
-        profilePicture: gender === "Male" ? boyPic : gender === "Female" ? girlPic : otherPic
+        profilePicture: gender === "Male" ? boyPic : gender === "Female" ? girlPic : gender === "Other" ? otherPic : ""
       })
 
       if(newUser){

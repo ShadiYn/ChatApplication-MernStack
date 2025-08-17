@@ -11,9 +11,9 @@ const MessageContainer = () => {
          <>
           {/*Header*/}
          <div className='bg-white/40 px-4 py-2 mb-2'>
-            <span className='label-text text-slate-900 font-bold'>To:
+            <span className='label-text text-slate-600 font-bold'>To:
             </span>
-            <span className='text-pink-950 font-bold'> Jhon Doe
+            <span className='text-black font-bold'> Jhon Doe
             </span>
           </div>
           <Messages/>

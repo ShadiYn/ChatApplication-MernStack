@@ -7,11 +7,11 @@ const SearchInput = () => {
     <input
   type="text"
   placeholder="Search"
-  className="input rounded-md bg-transparent text-white border-none placeholder:text-white focus:outline-none"
+  className="input rounded-md bg-transparent text-black border-none placeholder:text-black focus:outline-none"
 />
    <button
   type="submit"
-  className="btn btn-circle bg-transparent text-pink-700 border-none shadow-none"
+  className="btn btn-circle bg-transparent text-black border-none shadow-none"
 >
   <IoMdSearch size={24} />
 </button>
